@@ -1,7 +1,7 @@
 
 Project "Hangman_"
 
-The task is to implement the game "gallows" in Java. The interface is console. Description of the game rules on https://en.wikipedia.org/wiki/Hangman_(game)
+The task is to implement the game "Hangman_" in Java. The interface is console. Description of the game rules on https://en.wikipedia.org/wiki/Hangman_(game)
 
 1. Application functionality and console interface menu
 
