@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Main {
     static int countFail = 0;
     static Scanner scanner = new Scanner(System.in);
+    static HashSet<Character> guessedLetters = new HashSet<>();
 
     public static void main(String[] args) {
         try {
@@ -20,8 +22,16 @@ public class Main {
                 }
 
                 String consoleChar = readConsoleLetter();
-                String newResult = checkedWordInRound(word, result, consoleChar);
 
+                if (guessedLetters.contains(consoleChar.charAt(0))) {
+                    System.out.println("You've already guessed that letter. Try a different one.");
+                    continue;
+                } else {
+                    guessedLetters.add(consoleChar.charAt(0));
+                }
+
+
+                String newResult = checkedWordInRound(word, result, consoleChar);
                 if (result.equals(newResult)) {
                     countFail++;
                     displayHangman();
